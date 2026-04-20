@@ -16,6 +16,8 @@ services:
     env: node
     rootDir: decentralized-ai-marketplace/gateway
     plan: free
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -32,6 +34,8 @@ services:
     env: node
     rootDir: solana-ai-marketplace/gateway
     plan: free
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -48,6 +52,8 @@ services:
     env: node
     rootDir: decentralized-ai-marketplace/scheduler
     plan: free
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -59,11 +65,16 @@ services:
           property: connectionString
 
   # 6. AI Compute Worker
-  - type: worker
+  - type: web
     name: ai-compute-worker
     env: python
     rootDir: decentralized-ai-marketplace/worker
     plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn app:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PORT
+        value: 10000
 
   # 7. Main Laravel Hub (The Brain)
   - type: web
