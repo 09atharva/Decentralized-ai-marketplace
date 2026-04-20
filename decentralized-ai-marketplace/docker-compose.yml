@@ -40,5 +40,24 @@ services:
       - db
       - redis
 
+  worker:
+    build:
+      context: ./worker
+    ports:
+      - "8000:8000"
+    depends_on:
+      - gateway
+      - scheduler
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_GATEWAY_URL=http://localhost:4000
+    depends_on:
+      - gateway
+
 volumes:
   pgdata:

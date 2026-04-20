@@ -89,10 +89,3 @@ function App() {
 }
 
 export default App;
-odalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
-  );
-}
-
-export default App;

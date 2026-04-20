@@ -1,0 +1,50 @@
+services:
+  # Gateway Service
+  - type: web
+    name: decentralized-ai-gateway
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: CONTRACT_ADDRESS
+        sync: false
+      - key: PORT
+        value: "4000"
+    repo: https://github.com/09atharva/Decentralized-ai-marketplace.git
+    branch: main
+    rootDir: gateway
+
+  # Scheduler Service
+  - type: worker
+    name: decentralized-ai-scheduler
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+    repo: https://github.com/09atharva/Decentralized-ai-marketplace.git
+    branch: main
+    rootDir: scheduler
+
+  # Worker Node
+  - type: web
+    name: decentralized-ai-worker
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GATEWAY_URL
+        sync: false
+    repo: https://github.com/09atharva/Decentralized-ai-marketplace.git
+    branch: main
+    rootDir: worker
