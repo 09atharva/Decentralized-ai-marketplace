@@ -8,8 +8,11 @@ const modelsData = [
   { id: 1, name: 'Ether-70B Quantum', owner: 'neural_labs.eth', price: '0.0042 ETH', network: 'Ethereum', tags: ['NLP', 'Reasoning'], desc: 'Ultra-low latency model optimized for recursive reasoning and synthetic data generation.', featured: true },
   { id: 2, name: 'Vision-X Pro', owner: 'synth_architect', price: '0.0008 ETH', network: 'Ethereum', tags: ['Computer Vision', 'Object Detection'] },
   { id: 6, name: 'SolanaLlama-8B', owner: 'sol_dev.sol', price: '0.25 SOL', network: 'Solana', tags: ['NLP', 'Fast'], desc: 'Hyper-fast inference on Solana Devnet.' },
+  { id: 8, name: 'Grok-1 (LTS)', owner: 'x-ai.sol', price: '1.50 SOL', network: 'Solana', tags: ['Reasoning', 'DeFi'], desc: 'Enterprise-grade reasoning model for complex financial analysis.' },
+  { id: 9, name: 'Stable Diffusion 3', owner: 'creative.sol', price: '0.50 SOL', network: 'Solana', tags: ['Image Gen', 'Media'], desc: 'High-fidelity image generation powered by decentralized GPU nodes.' },
   { id: 3, name: 'AudioGen v2', owner: 'echo_systems', price: '0.0015 ETH', network: 'Ethereum', tags: ['Audio', 'Synthesis'] },
   { id: 7, name: 'SerumPredict AI', owner: 'defi_whale', price: '0.50 SOL', network: 'Solana', tags: ['Finance', 'Predictions'] },
+  { id: 10, name: 'Sora-Lite', owner: 'video.sol', price: '5.00 SOL', network: 'Solana', tags: ['Video Gen', 'Media'], desc: 'Text-to-video generation using ultra-high compute clusters.' },
   { id: 4, name: 'LogicGrid 7B', owner: 'logic_foundry', price: '0.0005 ETH', network: 'Ethereum', tags: ['Code', 'Fine-tuned'] },
 ];
 

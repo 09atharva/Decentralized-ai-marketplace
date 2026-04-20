@@ -6,6 +6,7 @@ const navItems = [
   { path: '/marketplace', icon: 'hub', label: 'Marketplace' },
   { path: '/jobs', icon: 'terminal', label: 'Compute Jobs' },
   { path: '/nodes', icon: 'memory', label: 'Node Registry' },
+  { path: '/vault', icon: 'account_balance', label: 'Yield Vault' },
   { path: '/docs', icon: 'description', label: 'Documentation' },
 ];
 

@@ -23,6 +23,7 @@ import JobsHistory from './pages/JobsHistory';
 import PaymentsBalance from './pages/PaymentsBalance';
 import UploadModel from './pages/UploadModel';
 import NodeOperatorDashboard from './pages/NodeOperatorDashboard';
+import Vault from './pages/Vault';
 
 function AppShell({ account, connectWallet, children }) {
   return (
@@ -82,6 +83,13 @@ function App() {
             </Routes>
           </Router>
         </WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
+  );
+}
+
+export default App;
+odalProvider>
       </WalletProvider>
     </ConnectionProvider>
   );
