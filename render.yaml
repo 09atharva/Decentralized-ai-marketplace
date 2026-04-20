@@ -64,3 +64,26 @@ services:
     env: python
     rootDir: decentralized-ai-marketplace/worker
     plan: free
+
+  # 7. Main Laravel Hub (The Brain)
+  - type: web
+    name: omni-hub-backend
+    env: php
+    plan: free
+    buildCommand: composer install --no-dev && php artisan migrate --force
+    startCommand: apache2-foreground
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: omni-db
+          property: connectionString
+      - key: REDIS_URL
+        fromRedis:
+          name: omni-redis
+          property: connectionString
