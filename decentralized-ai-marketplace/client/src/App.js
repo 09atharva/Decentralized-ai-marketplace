@@ -1,6 +1,16 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BrowserProvider } from 'ethers';
+
+// Solana Wallet Adapter
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { clusterApiUrl } from '@solana/web3.js';
+
+// Default styles for Solana wallet adapter
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
@@ -32,6 +42,14 @@ function AppShell({ account, connectWallet, children }) {
 function App() {
   const [account, setAccount] = useState('');
 
+  // Solana configuration
+  const network = WalletAdapterNetwork.Devnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const wallets = useMemo(() => [
+    new PhantomWalletAdapter(),
+    new SolflareWalletAdapter(),
+  ], [network]);
+
   const connectWallet = async () => {
     if (window.ethereum) {
       try {
@@ -47,22 +65,25 @@ function App() {
   };
 
   return (
-    <Router>
-      <Routes>
-        {/* Landing page — full-width, no sidebar */}
-        <Route path="/" element={<LandingPage onConnect={connectWallet} />} />
-
-        {/* All app pages — with sidebar + topbar shell */}
-        <Route path="/dashboard" element={<AppShell account={account} connectWallet={connectWallet}><Dashboard /></AppShell>} />
-        <Route path="/marketplace" element={<AppShell account={account} connectWallet={connectWallet}><ExploreModels /></AppShell>} />
-        <Route path="/model/:id" element={<AppShell account={account} connectWallet={connectWallet}><ModelDetail /></AppShell>} />
-        <Route path="/jobs" element={<AppShell account={account} connectWallet={connectWallet}><JobsHistory /></AppShell>} />
-        <Route path="/payments" element={<AppShell account={account} connectWallet={connectWallet}><PaymentsBalance /></AppShell>} />
-        <Route path="/upload" element={<AppShell account={account} connectWallet={connectWallet}><UploadModel /></AppShell>} />
-        <Route path="/nodes" element={<AppShell account={account} connectWallet={connectWallet}><NodeOperatorDashboard /></AppShell>} />
-        <Route path="*" element={<AppShell account={account} connectWallet={connectWallet}><Dashboard /></AppShell>} />
-      </Routes>
-    </Router>
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} autoConnect>
+        <WalletModalProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<LandingPage onConnect={connectWallet} />} />
+              <Route path="/dashboard" element={<AppShell account={account} connectWallet={connectWallet}><Dashboard /></AppShell>} />
+              <Route path="/marketplace" element={<AppShell account={account} connectWallet={connectWallet}><ExploreModels /></AppShell>} />
+              <Route path="/model/:id" element={<AppShell account={account} connectWallet={connectWallet}><ModelDetail /></AppShell>} />
+              <Route path="/jobs" element={<AppShell account={account} connectWallet={connectWallet}><JobsHistory /></AppShell>} />
+              <Route path="/payments" element={<AppShell account={account} connectWallet={connectWallet}><PaymentsBalance /></AppShell>} />
+              <Route path="/upload" element={<AppShell account={account} connectWallet={connectWallet}><UploadModel /></AppShell>} />
+              <Route path="/nodes" element={<AppShell account={account} connectWallet={connectWallet}><NodeOperatorDashboard /></AppShell>} />
+              <Route path="*" element={<AppShell account={account} connectWallet={connectWallet}><Dashboard /></AppShell>} />
+            </Routes>
+          </Router>
+        </WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
   );
 }
 
