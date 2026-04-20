@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload Model | Synthetic Ether</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #10131a;
+            color: #e1e2eb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 53, 60, 0.6);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .pulse-gradient {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(60, 221, 199, 0.4);
+        }
+        /* Custom scrollbar for a sleek technical look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #10131a; }
+        ::-webkit-scrollbar-thumb { background: #32353c; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131a",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#4d8eff",
+                        "tertiary-container": "#008678",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#adc6ff",
+                        "outline": "#908fa0",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131a",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container": "#1d2026",
+                        "surface": "#10131a",
+                        "on-primary": "#002e6a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3cddc7",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003731",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "error-container": "#93000a",
+                        "primary": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#62fae3",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-bright": "#363940",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#e1e2eb",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-container": "#000705",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- Side Navigation Bar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#10131a] dark:bg-[#10131a] shadow-[20px_0_40px_rgba(0,0,0,0.3)] z-[60] font-['Inter'] antialiased tracking-tight">
+<div class="flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-2">
+<span class="text-lg font-bold tracking-tighter text-white uppercase">Synthetic Ether</span>
+<p class="text-[10px] text-slate-500 tracking-[0.2em] mt-1">HIGH-COMPUTE INTELLIGENCE</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#272a31] text-[#adc6ff] font-semibold border-r-2 border-[#adc6ff] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="text-sm">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="text-sm">Compute Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+<span class="text-sm">Node Registry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm">Documentation</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 border-t border-slate-800/50 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-[#10131a]/60 backdrop-blur-xl flex justify-between items-center h-16 px-8 ml-64 font-['Inter'] text-sm font-medium">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">search</span>
+<input class="bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-2 w-full text-sm focus:ring-1 focus:ring-primary/30 text-on-surface" placeholder="Search marketplace..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+<button class="px-5 py-2 pulse-gradient text-on-primary-fixed font-bold rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98]">
+                Connect Wallet
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Hero Heading Section -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest rounded">Compute-Node</span>
+<span class="text-tertiary text-xs font-mono">0x4F...E921</span>
+</div>
+<h1 class="text-4xl font-extrabold tracking-tight text-white mb-4">Register New Intelligence</h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                    Deploy your neural weights to the Synthetic Ether network. High-performance models are incentivized with automated compute dividends. Ensure your IPFS hash is pinned before finalization.
+                </p>
+</div>
+<!-- Asymmetric Bento Form Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Main Form Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Section: Core Identity -->
+<div class="bg-surface-container-low rounded-xl p-8 shadow-2xl">
+<h2 class="text-lg font-semibold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">identity_platform</span>
+                            Model Specification
+                        </h2>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Intelligence Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="e.g. Llama-3-Synth-70B" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Architecture Description</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none" placeholder="Define model capabilities, training set characteristics, and optimized use cases..." rows="5"></textarea>
+</div>
+</div>
+</div>
+<!-- Section: Decentralized Storage -->
+<div class="bg-surface-container-low rounded-xl p-8 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[80px]">cloud_upload</span>
+</div>
+<h2 class="text-lg font-semibold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">database</span>
+                            IPFS Deployment
+                        </h2>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-10 flex flex-col items-center justify-center bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
+</div>
+<p class="text-on-surface font-medium mb-1">Drag and drop model weights (.safetensors, .bin)</p>
+<p class="text-slate-500 text-xs">Maximum file size: 50GB per node instance</p>
+<div class="mt-8 flex gap-4">
+<button class="px-6 py-2 bg-surface-container-high text-on-surface text-xs font-bold rounded hover:bg-surface-bright transition-colors uppercase tracking-wider">Select Files</button>
+<button class="px-6 py-2 bg-transparent border border-outline-variant/40 text-slate-400 text-xs font-bold rounded hover:text-white hover:border-white transition-all uppercase tracking-wider">Connect IPFS Desktop</button>
+</div>
+</div>
+<!-- Progress Display -->
+<div class="mt-8">
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">sync</span>
+<span class="text-xs font-bold uppercase tracking-tighter text-slate-300 italic">Uploading Shards...</span>
+</div>
+<span class="text-tertiary font-mono text-sm">64.2%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full relative" style="width: 64.2%;">
+<div class="absolute right-0 top-0 h-full w-2 bg-white/40 blur-[2px] progress-glow"></div>
+</div>
+</div>
+<div class="mt-3 flex justify-between">
+<span class="text-[10px] text-slate-500 font-mono">CID: QmXoyp...3n8tJ</span>
+<span class="text-[10px] text-slate-500 font-mono">1.2 GB / 1.8 GB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Sidebar Column (Controls) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Pricing & Governance Card -->
+<div class="glass-panel rounded-xl p-6 shadow-2xl">
+<h2 class="text-sm font-bold text-white uppercase tracking-widest mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">payments</span>
+                            Monetization
+                        </h2>
+<div class="space-y-6">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Inference Price (per 1k tokens)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-4 pr-12 py-3 text-on-surface font-mono focus:ring-1 focus:ring-secondary/40" step="0.00001" type="number" value="0.00420"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-secondary font-bold text-xs">ETH</span>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Access Control</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg px-4 py-3 text-on-surface text-sm focus:ring-1 focus:ring-secondary/40 appearance-none">
+<option>Public Open-Source</option>
+<option>Restricted Inference Only</option>
+<option>Private Workspace</option>
+</select>
+</div>
+<div class="pt-4 border-t border-outline-variant/20">
+<div class="flex justify-between text-xs mb-2">
+<span class="text-slate-400">Network Fee (2%)</span>
+<span class="text-on-surface font-mono">0.000084 ETH</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-slate-400">Node Maintenance</span>
+<span class="text-tertiary font-mono">Automated</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Thumbnail -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 transition-all" data-alt="abstract 3d visualization of neural network pathways with glowing nodes and complex digital geometry in dark space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBMfEBOX9rvHExhKuCYD7guBo_LNKAj0pmKjHy77wIB-MfScDLW4mV5wilxPCjUJ8sSipZL5VmXO7sFkVd-JdgwkwJlzi3owhvWlJVGo3YwX7NLUNS5jWGko8AntwjrEzBysvBj3Oa5IusuTIQdA9pZn67jIwW5JZp1_GUiJeoCCHvs8L-BqzkSQOCL0GV8-jF3IhJaxShjkmXHNvDH_rYpNFE2nXeuGwcjTZ521ghJhkPyC9y5tRM6DQtZq4z0-ft-vw5PM5r35Aj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1">Preview Visualization</p>
+<h3 class="text-white font-bold text-lg truncate">Untitled Intelligence</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded border border-secondary/20">LLM</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded border border-secondary/20">70B</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded border border-secondary/20">FP16</span>
+</div>
+</div>
+</div>
+<!-- Final Action Button -->
+<button class="w-full py-4 pulse-gradient text-on-primary-fixed font-black text-sm uppercase tracking-widest rounded-xl shadow-[0_0_30px_rgba(173,198,255,0.2)] hover:shadow-[0_0_40px_rgba(173,198,255,0.4)] transition-all transform active:scale-[0.97]">
+                        Deploy to Synthetic Ether
+                    </button>
+<p class="text-[10px] text-center text-slate-500 px-4 leading-relaxed">
+                        By deploying, you agree to the Automated Intelligent License Agreement and network slashing protocols for invalid output data.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Status Bar -->
+<footer class="fixed bottom-0 right-0 w-[calc(100%-16rem)] h-10 bg-surface-container-lowest/80 backdrop-blur-md px-8 flex items-center justify-between border-t border-white/5 z-40">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<span class="text-[10px] font-mono text-tertiary">Network Status: Optimal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-slate-500">Gas: 18 Gwei</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-[10px] font-mono text-slate-500">
+<span>Lat: 24ms</span>
+<span>Uptime: 99.98%</span>
+</div>
+</footer>
+</body></html>

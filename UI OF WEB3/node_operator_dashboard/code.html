@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Synthetic Ether | Node Operator Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#10131a",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#4d8eff",
+                        "tertiary-container": "#008678",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#adc6ff",
+                        "outline": "#908fa0",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131a",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container": "#1d2026",
+                        "surface": "#10131a",
+                        "on-primary": "#002e6a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3cddc7",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003731",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "error-container": "#93000a",
+                        "primary": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#62fae3",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-bright": "#363940",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#e1e2eb",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-container": "#000705",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005047"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #10131a;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 53, 60, 0.6);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .pulse-gradient {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #10131a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #32353c;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#10131a] z-50 shadow-[20px_0_40px_rgba(0,0,0,0.3)] font-['Inter'] antialiased tracking-tight">
+<div class="flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-4">
+<span class="text-lg font-bold tracking-tighter text-white uppercase">Synthetic Ether</span>
+<p class="text-[10px] text-slate-500 tracking-[0.2em] uppercase mt-1">High-Compute Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out bg-[#272a31] text-[#adc6ff] font-semibold border-r-2 border-[#adc6ff] scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="text-sm">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="text-sm">Compute Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+<span class="text-sm">Node Registry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm">Documentation</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant/10 space-y-1">
+<button class="w-full mb-4 px-4 py-2.5 rounded-md pulse-gradient text-on-primary-fixed text-sm font-bold tracking-tight flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+                    Deploy Model
+                </button>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded transition-all duration-200 ease-out text-slate-400 hover:text-slate-100 hover:bg-[#272a31]" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-[#10131a]/60 backdrop-blur-xl h-16 flex items-center justify-between px-8 ml-64 transition-colors">
+<div class="flex items-center gap-6 flex-1">
+<h1 class="hidden md:block text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#adc6ff] to-[#ddb7ff]">Ether Marketplace</h1>
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-2 text-sm text-on-surface placeholder-slate-500 focus:ring-1 focus:ring-primary/50" placeholder="Search nodes or models..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="bg-surface-container-high border border-outline-variant/20 px-4 py-2 rounded-md text-xs font-bold uppercase tracking-widest text-[#adc6ff] hover:bg-surface-bright transition-all">
+                Connect Wallet
+            </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-20 p-8 min-h-screen">
+<!-- Header Section -->
+<section class="mb-10 flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-tertiary font-medium text-sm tracking-wide uppercase">Node Online</span>
+</div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">Node-Alpha-791</h2>
+<p class="text-slate-400 mt-1 text-sm">Location: US-East (Virginia) • Uptime: 99.98%</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Total Earnings</p>
+<p class="text-2xl font-black text-secondary">4.821 ETH</p>
+</div>
+<div class="w-[1px] h-10 bg-outline-variant/20"></div>
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Current Multiplier</p>
+<p class="text-2xl font-black text-tertiary">1.4x</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Metrics -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<!-- Real-time GPU Monitor (Large) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary">memory</span>
+</div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h3 class="text-lg font-bold text-on-surface">Hardware Real-time Monitor</h3>
+<p class="text-xs text-slate-400">NVIDIA RTX 4090 • 24GB VRAM</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded text-[10px] font-bold text-primary tracking-tighter">FP16 ENABLED</span>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded text-[10px] font-bold tracking-tighter">OPTIMAL TEMP</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<!-- Gauge 1 -->
+<div class="flex flex-col items-center">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-black">72%</span>
+<span class="text-[8px] text-slate-500 uppercase font-bold">Load</span>
+</div>
+</div>
+<p class="mt-4 text-xs font-bold text-slate-400 uppercase tracking-widest">Compute Load</p>
+</div>
+<!-- Gauge 2 -->
+<div class="flex flex-col items-center">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="40" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-black">18.4</span>
+<span class="text-[8px] text-slate-500 uppercase font-bold">GB</span>
+</div>
+</div>
+<p class="mt-4 text-xs font-bold text-slate-400 uppercase tracking-widest">vRAM Usage</p>
+</div>
+<!-- Gauge 3 -->
+<div class="flex flex-col items-center">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="280" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-black">64°</span>
+<span class="text-[8px] text-slate-500 uppercase font-bold">Celsius</span>
+</div>
+</div>
+<p class="mt-4 text-xs font-bold text-slate-400 uppercase tracking-widest">Core Temp</p>
+</div>
+</div>
+</div>
+<!-- Earnings Projection (Small) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-high rounded-xl p-6 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold mb-1">Weekly Yield</h3>
+<p class="text-xs text-slate-500">Estimated rewards based on current traffic</p>
+</div>
+<div class="mt-6 flex items-end gap-2">
+<div class="flex-1 bg-surface-container-highest h-16 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full bg-primary/20 h-1/2"></div>
+</div>
+<div class="flex-1 bg-surface-container-highest h-24 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full bg-primary/20 h-2/3"></div>
+</div>
+<div class="flex-1 bg-surface-container-highest h-20 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full bg-primary/20 h-1/3"></div>
+</div>
+<div class="flex-1 bg-surface-container-highest h-28 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full bg-secondary h-[85%]"></div>
+<div class="absolute top-2 left-1/2 -translate-x-1/2 text-[8px] font-bold text-on-secondary uppercase">Today</div>
+</div>
+</div>
+<div class="mt-6">
+<div class="flex justify-between text-sm py-2 border-b border-outline-variant/10">
+<span class="text-slate-400">Projected Monthly</span>
+<span class="font-bold text-on-surface">1.22 ETH</span>
+</div>
+<div class="flex justify-between text-sm py-2 border-b border-outline-variant/10">
+<span class="text-slate-400">Network Fee (5%)</span>
+<span class="font-bold text-on-surface">0.06 ETH</span>
+</div>
+<div class="flex justify-between text-sm py-2">
+<span class="text-slate-400">Net Profit</span>
+<span class="font-black text-tertiary">1.16 ETH</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Row: Active Model & Job History -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Active Model Card -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col">
+<div class="relative h-48">
+<img alt="Abstract representation of neural network layers with glowing nodes and interconnecting lines" class="w-full h-full object-cover" data-alt="abstract neural network with interconnected glowing fiber optic lines and blue nodes on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDojZEnzRF6FB9XrGiMby6xRvH1Pb8h1xsExMlNNT4Fo9nDqxYXp060jzbUCgYwRWgLftWmB-OetVNkowpYessP_tlpywSJmwrFor6OKbGyvfLWpiTAoc2FdQmqHdtFZpeJEJ5-sRg2WJx9uYb3CwzFUuKnsjZlZVgmybszntnhBNthRZht0RbC1ZRbMcguPw1Fd9AgoMQyLirYrNw_EJNKTE6YMJXFejrxwLKkqy_9s4kNZ8WEOMR5MoWx_ihwA93p0N27Nm5lNzTs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="px-2 py-1 bg-secondary text-on-secondary text-[10px] font-black uppercase rounded mb-2 inline-block">Active Computation</span>
+<h4 class="text-xl font-bold">Llama-3-70B-Instruct</h4>
+</div>
+</div>
+<div class="p-6 flex-1">
+<div class="flex items-center justify-between mb-4">
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 bg-surface-container-highest rounded text-slate-300">LLM</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-surface-container-highest rounded text-slate-300">QUANTIZED</span>
+</div>
+<span class="text-xs text-slate-400">ID: job_99812_xf</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-400">Context Window Progress</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-[82%] relative">
+<div class="absolute right-0 top-0 h-full w-1 bg-white blur-[2px]"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest/30 p-3 rounded">
+<p class="text-[9px] text-slate-500 uppercase tracking-widest mb-1">Tokens/Sec</p>
+<p class="text-lg font-bold">128.4</p>
+</div>
+<div class="bg-surface-container-highest/30 p-3 rounded">
+<p class="text-[9px] text-slate-500 uppercase tracking-widest mb-1">Latency</p>
+<p class="text-lg font-bold">14ms</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Job History Table -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-low rounded-xl p-6 overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Recent Job History</h3>
+<button class="text-xs text-primary font-bold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] text-slate-500 uppercase tracking-widest">
+<th class="pb-4 font-medium">Job ID</th>
+<th class="pb-4 font-medium">Model</th>
+<th class="pb-4 font-medium">Duration</th>
+<th class="pb-4 font-medium">Reward</th>
+<th class="pb-4 font-medium text-right">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="group hover:bg-surface-container-high/40 transition-colors">
+<td class="py-4 font-mono text-xs text-slate-400">#66291</td>
+<td class="py-4 font-bold text-on-surface">Stable Diffusion XL</td>
+<td class="py-4 text-slate-400">12m 45s</td>
+<td class="py-4 text-tertiary font-bold">0.008 ETH</td>
+<td class="py-4 text-right">
+<span class="text-[10px] bg-tertiary/10 text-tertiary px-2 py-1 rounded font-bold uppercase">Success</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-high/40 transition-colors border-t border-outline-variant/5">
+<td class="py-4 font-mono text-xs text-slate-400">#66288</td>
+<td class="py-4 font-bold text-on-surface">Mistral 7B v0.2</td>
+<td class="py-4 text-slate-400">1h 04m</td>
+<td class="py-4 text-tertiary font-bold">0.042 ETH</td>
+<td class="py-4 text-right">
+<span class="text-[10px] bg-tertiary/10 text-tertiary px-2 py-1 rounded font-bold uppercase">Success</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-high/40 transition-colors border-t border-outline-variant/5">
+<td class="py-4 font-mono text-xs text-slate-400">#66284</td>
+<td class="py-4 font-bold text-on-surface">DeepSeek Coder</td>
+<td class="py-4 text-slate-400">44m 12s</td>
+<td class="py-4 text-tertiary font-bold">0.021 ETH</td>
+<td class="py-4 text-right">
+<span class="text-[10px] bg-tertiary/10 text-tertiary px-2 py-1 rounded font-bold uppercase">Success</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-high/40 transition-colors border-t border-outline-variant/5">
+<td class="py-4 font-mono text-xs text-slate-400">#66281</td>
+<td class="py-4 font-bold text-on-surface">Whisper Large v3</td>
+<td class="py-4 text-slate-400">02m 11s</td>
+<td class="py-4 text-tertiary font-bold">0.001 ETH</td>
+<td class="py-4 text-right">
+<span class="text-[10px] bg-tertiary/10 text-tertiary px-2 py-1 rounded font-bold uppercase">Success</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-high/40 transition-colors border-t border-outline-variant/5">
+<td class="py-4 font-mono text-xs text-slate-400">#66277</td>
+<td class="py-4 font-bold text-on-surface">Llama-2-70B</td>
+<td class="py-4 text-slate-400">--</td>
+<td class="py-4 text-error font-bold">0.000 ETH</td>
+<td class="py-4 text-right">
+<span class="text-[10px] bg-error/10 text-error px-2 py-1 rounded font-bold uppercase">Aborted</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action State (Subtle) -->
+<div class="fixed bottom-8 right-8 z-50">
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 border border-outline-variant/20 shadow-2xl">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface shadow-md object-cover" data-alt="portrait of a software engineer in a dimly lit tech office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmGJyiL8wm6DFnZosQkdxCHJ9Pb-epHsBJ-vAXHHlekgtJU-MC0BD9vzdyZubNINS5jNMvD2eAQcBNUYrVvHldUntosxZkSKRvqehzJ8ey_Fi-tRJAfR98VgWDpbRvIrNnak4OprneKX8mM3wBU-FWA9_OcZtxcSUUAHc0AblYhhXCHr_7wgckp4Q9DxVck_K6T4FF7VS7I7bm5JfGRa5ZINd3kTMNbgUL0qREAqdx29qigoA7w-sk5GyGBOn03BMqmIfBe-XljXAg"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Operator Mode</p>
+<p class="text-[10px] text-tertiary flex items-center gap-1 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Secure Connection Active
+                </p>
+</div>
+<button class="bg-surface-bright p-2 rounded-lg hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</body></html>

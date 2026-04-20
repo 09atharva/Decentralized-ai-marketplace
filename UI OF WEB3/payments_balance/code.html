@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#10131a",
+                    "on-primary-fixed": "#001a42",
+                    "primary-container": "#4d8eff",
+                    "tertiary-container": "#008678",
+                    "on-secondary": "#490080",
+                    "surface-tint": "#adc6ff",
+                    "outline": "#908fa0",
+                    "outline-variant": "#464554",
+                    "on-tertiary-fixed": "#00201c",
+                    "surface-container-highest": "#32353c",
+                    "primary-fixed-dim": "#adc6ff",
+                    "tertiary-fixed-dim": "#3cddc7",
+                    "surface-dim": "#10131a",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "surface-container-lowest": "#0b0e14",
+                    "surface-container": "#1d2026",
+                    "surface": "#10131a",
+                    "on-primary": "#002e6a",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#3cddc7",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary": "#003731",
+                    "on-primary-container": "#00285d",
+                    "on-secondary-container": "#d6a9ff",
+                    "on-secondary-fixed": "#2c0051",
+                    "surface-variant": "#32353c",
+                    "surface-container-low": "#191c22",
+                    "error-container": "#93000a",
+                    "primary": "#adc6ff",
+                    "inverse-primary": "#005ac2",
+                    "tertiary-fixed": "#62fae3",
+                    "surface-container-high": "#272a31",
+                    "on-surface": "#e1e2eb",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#6f00be",
+                    "secondary": "#ddb7ff",
+                    "surface-bright": "#363940",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-background": "#e1e2eb",
+                    "inverse-surface": "#e1e2eb",
+                    "on-tertiary-container": "#000705",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary-fixed": "#f0dbff",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#005047"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 53, 60, 0.6);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .pulse-glow {
+            box-shadow: 0 0 20px rgba(173, 198, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#10131a] dark:bg-[#10131a] bg-[#1b1e26] border-none shadow-[20px_0_40px_rgba(0,0,0,0.3)] z-[60]">
+<div class="flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-sm" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<h1 class="text-lg font-bold tracking-tighter text-white uppercase">Synthetic Ether</h1>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] antialiased tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-[#272a31] text-[#adc6ff] font-semibold border-r-2 border-[#adc6ff] rounded" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Inter'] antialiased tracking-tight">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Inter'] antialiased tracking-tight">Compute Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">memory</span>
+<span class="font-['Inter'] antialiased tracking-tight">Node Registry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] antialiased tracking-tight">Documentation</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] antialiased tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-['Inter'] antialiased tracking-tight">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-[#10131a]/60 backdrop-blur-xl dark:bg-[#10131a]/60 bg-gradient-to-b from-[#1b1e26] to-transparent">
+<div class="flex justify-between items-center h-16 px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary/50 text-on-surface" placeholder="Search marketplace..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-400">
+<button class="hover:text-[#adc6ff] transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-[#adc6ff] transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+<button class="px-5 py-2 bg-gradient-to-r from-[#adc6ff] to-[#ddb7ff] text-on-primary-fixed text-sm font-semibold rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-10 pb-12 min-h-screen">
+<div class="max-w-7xl mx-auto space-y-10">
+<!-- Page Header -->
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl font-black text-on-surface tracking-tight uppercase">Ether Marketplace <span class="text-primary italic">/</span> Payments</h2>
+<p class="text-on-surface-variant text-sm max-w-lg">Manage your compute credits, view real-time node earnings, and settle transaction balances.</p>
+</div>
+<!-- Dashboard Layout (Asymmetric Bento) -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Balance Card (Primary) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -mr-32 -mt-32"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Total Compute Power</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tighter text-on-surface">42.850</span>
+<span class="text-xl font-bold text-secondary">ETH</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2">≈ $112,403.12 USD</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary text-3xl">account_balance</span>
+</div>
+</div>
+<div class="relative z-10 mt-12 flex gap-4">
+<button class="flex-1 py-4 bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold rounded-lg pulse-glow hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_upward</span>
+                            Withdraw Funds
+                        </button>
+<button class="px-8 py-4 bg-surface-container-highest border border-outline-variant/20 text-on-surface font-bold rounded-lg hover:bg-surface-bright transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                            Deposit
+                        </button>
+</div>
+</div>
+<!-- Secondary Stats -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/5">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-4">Pending Rewards</span>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-tertiary">1.24 ETH</span>
+<span class="text-xs bg-tertiary/10 text-tertiary px-2 py-1 rounded">Processing</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 mt-6 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-tertiary to-primary h-full w-[70%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/5">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-4">Next Payout</span>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-on-surface">Oct 24, 2023</span>
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-2">Automatically dispersed to your wallet.</p>
+</div>
+</div>
+<!-- Transaction History Table -->
+<div class="col-span-12">
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-xl font-bold text-on-surface">Transaction History</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-xs font-bold rounded bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors">Export CSV</button>
+<button class="px-4 py-2 text-xs font-bold rounded bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors">Filters</button>
+</div>
+</div>
+<div class="overflow-hidden rounded-xl bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface text-on-surface-variant uppercase text-[10px] font-bold tracking-widest">
+<tr>
+<th class="px-6 py-4">Transaction ID</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Type</th>
+<th class="px-6 py-4">Method</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4 text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 font-mono text-xs text-primary">TX-9042-1X9A</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-xs font-medium">Completed</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface">Compute Payout</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">token</span>
+<span class="text-xs text-on-surface-variant">L1 Ethereum</span>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 12, 2023 14:22</td>
+<td class="px-6 py-4 text-right font-bold text-on-surface">+0.45 ETH</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 font-mono text-xs text-primary">TX-8113-5V6B</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-xs font-medium">Completed</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface">Model Licensing</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span class="text-xs text-on-surface-variant">Internal Credit</span>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 10, 2023 09:15</td>
+<td class="px-6 py-4 text-right font-bold text-error">-0.12 ETH</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 font-mono text-xs text-primary">TX-7552-8K0L</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-xs font-medium">Pending</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface">Compute Payout</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">token</span>
+<span class="text-xs text-on-surface-variant">L1 Ethereum</span>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 08, 2023 21:40</td>
+<td class="px-6 py-4 text-right font-bold text-on-surface">+1.24 ETH</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4 font-mono text-xs text-primary">TX-6221-3Q2M</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-xs font-medium">Completed</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface">Deposit</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+<span class="text-xs text-on-surface-variant">MetaMask</span>
+</div>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 05, 2023 11:05</td>
+<td class="px-6 py-4 text-right font-bold text-on-surface">+10.00 ETH</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Billing Information (Glassy) -->
+<div class="col-span-12 glass-panel rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 border border-outline-variant/10">
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h4 class="text-lg font-bold text-on-surface">Verified Payout Wallet</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your funds are being sent to <span class="text-primary font-mono bg-surface-container-lowest px-2 py-0.5 rounded">0x71C...492b</span>. Ensure this address is correct before proceeding with any withdrawals.</p>
+<div class="flex gap-4">
+<button class="text-xs font-bold text-secondary uppercase tracking-widest hover:text-secondary-fixed transition-colors">Update Address</button>
+<button class="text-xs font-bold text-on-surface-variant uppercase tracking-widest hover:text-on-surface transition-colors">View on Etherscan</button>
+</div>
+</div>
+<div class="h-24 w-full md:w-px bg-outline-variant/10 hidden md:block"></div>
+<div class="w-full md:w-64 space-y-4">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Daily Limit</span>
+<span class="text-on-surface">50.0 ETH</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85.7%]"></div>
+</div>
+<p class="text-[10px] text-center text-on-surface-variant uppercase font-bold tracking-tighter">85.7% of daily quota remaining</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Security Tag (Contextual Element) -->
+<div class="fixed bottom-6 right-6 flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-outline-variant/20 shadow-xl pointer-events-none">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Secured by AES-256</span>
+</div>
+</body></html>

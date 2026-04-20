@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Synthetic Ether - AI Model Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131a",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#4d8eff",
+                        "tertiary-container": "#008678",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#adc6ff",
+                        "outline": "#908fa0",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131a",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container": "#1d2026",
+                        "surface": "#10131a",
+                        "on-primary": "#002e6a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3cddc7",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003731",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "error-container": "#93000a",
+                        "primary": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#62fae3",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-bright": "#363940",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#e1e2eb",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-container": "#000705",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 53, 60, 0.6);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .neon-pulse {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #10131a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #32353c;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#10131a] dark:bg-[#10131a] font-['Inter'] antialiased tracking-tight shadow-[20px_0_40px_rgba(0,0,0,0.3)] z-[60]">
+<div class="flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-4">
+<h1 class="text-lg font-bold tracking-tighter text-white uppercase">Synthetic Ether</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wide">High-Compute Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded bg-[#272a31] text-[#adc6ff] font-semibold border-r-2 border-[#adc6ff] transition-all duration-200 ease-out scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span>Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="Terminal">terminal</span>
+<span>Compute Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span>Node Registry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out scale-[0.98] active:duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Documentation</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 space-y-1">
+<button class="w-full mb-6 neon-pulse text-on-primary-fixed font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Deploy Model
+                </button>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-[#10131a]/60 backdrop-blur-xl dark:bg-[#10131a]/60 flex justify-between items-center h-16 px-8 ml-64 font-['Inter'] text-sm font-medium">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="hidden md:block text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#adc6ff] to-[#ddb7ff]">Ether Marketplace</h2>
+<div class="relative max-w-md w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-2 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search decentralized models..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+<button class="px-5 py-2 border border-outline-variant/30 text-on-surface hover:bg-surface-container-high transition-colors rounded-lg font-semibold active:opacity-80">
+                Connect Wallet
+            </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-20 px-8 pb-12 min-h-screen">
+<!-- Dashboard Header -->
+<section class="mb-10 flex justify-between items-end">
+<div>
+<p class="text-primary font-bold tracking-widest text-[10px] uppercase mb-1">Developer Overview</p>
+<h3 class="text-4xl font-extrabold tracking-tight text-on-surface">Workspace Terminal</h3>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#3cddc7]"></span>
+<span class="text-xs font-semibold text-tertiary">Network Status: Optimal</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Stats -->
+<section class="grid grid-cols-12 gap-6 mb-10">
+<!-- Total Earnings -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</span>
+<span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-2 py-1 rounded">+12.5%</span>
+</div>
+<p class="text-sm font-medium text-slate-400 mb-1">Total Earnings</p>
+<h4 class="text-3xl font-black text-white tracking-tighter">142.85 ETH</h4>
+<p class="text-[10px] text-slate-500 mt-4 font-mono">0x4a92...b2e1 verified</p>
+</div>
+<!-- Ambient Glow Background -->
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+</div>
+<!-- API Calls -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary/10 text-secondary rounded-lg">
+<span class="material-symbols-outlined" data-icon="api">api</span>
+</span>
+<span class="text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-1 rounded">Real-time</span>
+</div>
+<p class="text-sm font-medium text-slate-400 mb-1">Total API Calls</p>
+<h4 class="text-3xl font-black text-white tracking-tighter">8.2M</h4>
+<div class="mt-4 flex gap-1 h-1">
+<div class="flex-1 bg-secondary/40 rounded-full"></div>
+<div class="flex-1 bg-secondary/60 rounded-full"></div>
+<div class="flex-1 bg-secondary/20 rounded-full"></div>
+<div class="flex-1 bg-secondary/80 rounded-full"></div>
+<div class="flex-1 bg-secondary rounded-full"></div>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-secondary/5 rounded-full blur-3xl group-hover:bg-secondary/10 transition-all"></div>
+</div>
+<!-- Active Jobs -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-tertiary/10 text-tertiary rounded-lg">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</span>
+<span class="text-[10px] font-bold text-outline-variant uppercase">Running</span>
+</div>
+<p class="text-sm font-medium text-slate-400 mb-1">Active Compute Jobs</p>
+<h4 class="text-3xl font-black text-white tracking-tighter">24</h4>
+<div class="mt-4 flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="avatar of a male developer with glasses and neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCInrYmM1vEEo4Oga1Ul8DsUWhnJbKGdE1pifrTDOfTDyUpRPAiCaO-c1qFLyDBX6E1yZ_7SGGrh7-TUR74v89BcSel68JGpiaxaCRFL3DLa4VBCkIlsQ7KaHY5hEToLgVfyA3grNBUyB2vSGdQ12zocmJPgBpLudU1XkuuL23hEYZ7bThaOoNGxANRvorSSf1IRkYqB8Pjn_atOozcWCPJcG6DRYAJwwWJl9lXh8kwsKe4ij_ztLjEgemsPEfsQ35OwractvFLR4xp"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="avatar of a young woman with a professional smile and dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuSBOmEo2ZKJ1VXrtpeNpCPtwlLyHvcaL0Hbp8CEFUm6CynWTRK9YcqGYpN5-4Yzjzu75nOJHdtefERHqXa6oUeMizs5w0bGtT_3qRb4jlc9IBhkFvprmrx1lX36ujQZxSHlO8GQVh__kDnyT1Q42tPD4mXUtgeTVBFiM-vy92Cr0fxfp9o0EufDRr9E6qTiGowYBChFzYcbo1Bg8y7q_9QUV_e8dGVGhAltZlnwCaHdUJv8KZObd3DVuRGHlqS4WBthLDiJyzbJTT"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-variant flex items-center justify-center text-[8px] font-bold text-slate-300">+22</div>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-tertiary/5 rounded-full blur-3xl group-hover:bg-tertiary/10 transition-all"></div>
+</div>
+</section>
+<!-- Main Content Area: Activity and Featured Model -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Activity Feed -->
+<section class="col-span-12 lg:col-span-8">
+<div class="mb-6 flex items-center justify-between">
+<h5 class="text-lg font-bold text-white tracking-tight">Recent Activity</h5>
+<button class="text-xs font-bold text-primary hover:underline">View Ledger</button>
+</div>
+<div class="space-y-4">
+<!-- Activity Row -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg group transition-colors hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
+</div>
+<div>
+<h6 class="text-sm font-bold text-white">LLM-Crystal-70B Deployed</h6>
+<p class="text-xs text-slate-500">Fine-tuning complete. Model live on Marketplace.</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-mono text-tertiary">+0.45 ETH</span>
+<span class="text-[10px] text-slate-600 uppercase font-bold">2 mins ago</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<div>
+<h6 class="text-sm font-bold text-white">License Purchased</h6>
+<p class="text-xs text-slate-500">Node Cluster #42 purchased commercial usage for Vision-v4.</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-mono text-tertiary">+12.20 ETH</span>
+<span class="text-[10px] text-slate-600 uppercase font-bold">45 mins ago</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg group transition-colors hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</div>
+<div>
+<h6 class="text-sm font-bold text-white">Node Synchronization</h6>
+<p class="text-xs text-slate-500">Registry update: 1,402 new validator nodes detected.</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-mono text-slate-400">---</span>
+<span class="text-[10px] text-slate-600 uppercase font-bold">2 hours ago</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group transition-colors hover:bg-surface-container-high">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="report">report</span>
+</div>
+<div>
+<h6 class="text-sm font-bold text-white">Job Pre-empted</h6>
+<p class="text-xs text-slate-500">Batch process ID #882 paused due to high priority task.</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-mono text-error">-0.05 ETH</span>
+<span class="text-[10px] text-slate-600 uppercase font-bold">4 hours ago</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Model/Action -->
+<section class="col-span-12 lg:col-span-4">
+<div class="bg-surface-container-highest rounded-2xl overflow-hidden relative group">
+<img class="w-full h-48 object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="abstract digital 3D render of crystalline structures with purple and blue glowing lights in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf-q4BHCCtb6I_vMhGNoZe1p-RPIjEDshO4qck_FyTeAmsjt4rWebWb7usqWGOkui5_F2Y6RNIdKeyZqQeSh7VDU_hB3z1n8Enk0wDgYrEoZM05gLkJgxtNfWPoUAEBUQev29OqVJRf3qxbxylS0zlYhDvWdonB1JWSBwdfe4gn3LU7LK1izpU9jC4N8OK7qyYPCBtwxf6bfIYpGoXDulR2Jo15irrYnnHMVLIW2f_BkN7a7L94FTwT-L3nhgltWj4rxh_AxBVXYHu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-surface-container-highest/60 to-transparent"></div>
+<div class="p-6 relative">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-[8px] font-black uppercase rounded">Top Rated</span>
+<span class="px-2 py-1 bg-tertiary-container text-white text-[8px] font-black uppercase rounded">H100 Ready</span>
+</div>
+<h5 class="text-xl font-black text-white mb-2 leading-tight">Hyperion Quantum Engine v2.4</h5>
+<p class="text-xs text-slate-400 mb-6 leading-relaxed">The most efficient LLM for predictive financial analytics and de-fi modeling. Fully decentralized weights.</p>
+<div class="flex items-center justify-between mb-6">
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase">Usage Fee</p>
+<p class="text-lg font-black text-primary">0.002 ETH <span class="text-[10px] text-slate-400 font-normal">/ 1k Tokens</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Stability</p>
+<p class="text-lg font-black text-tertiary">99.9%</p>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-bright border border-outline-variant/30 text-white font-bold rounded-lg hover:bg-white hover:text-background transition-all active:scale-95">
+                            Launch Playground
+                        </button>
+</div>
+</div>
+<!-- Compute Usage Small Card -->
+<div class="mt-6 bg-surface-container-low p-5 rounded-2xl border border-white/5">
+<div class="flex justify-between items-center mb-4">
+<h6 class="text-sm font-bold text-white uppercase tracking-wider">Compute Limit</h6>
+<span class="text-xs font-mono text-primary">74% Used</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="h-full neon-pulse shadow-[0_0_8px_#adc6ff]" style="width: 74%"></div>
+</div>
+<p class="mt-3 text-[10px] text-slate-500">Next renewal in <span class="text-slate-300 font-bold">14 hours</span>. Upgrade for unlimited H100 access.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating UI Decoration -->
+<div class="fixed bottom-10 right-10 pointer-events-none opacity-20 blur-3xl w-64 h-64 bg-primary/20 rounded-full z-0"></div>
+<div class="fixed top-1/2 left-1/4 pointer-events-none opacity-10 blur-3xl w-96 h-96 bg-secondary/20 rounded-full z-0"></div>
+</body></html>

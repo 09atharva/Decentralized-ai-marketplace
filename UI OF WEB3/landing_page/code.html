@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Synthetic Ether | Decentralized AI Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131a",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#4d8eff",
+                        "tertiary-container": "#008678",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#adc6ff",
+                        "outline": "#908fa0",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131a",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container": "#1d2026",
+                        "surface": "#10131a",
+                        "on-primary": "#002e6a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3cddc7",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003731",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "error-container": "#93000a",
+                        "primary": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#62fae3",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-bright": "#363940",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#e1e2eb",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-container": "#000705",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #10131a;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(173, 198, 255, 0.2);
+        }
+        .glass-panel {
+            background: rgba(50, 53, 60, 0.6);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pulse-button {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 right-0 w-full z-50 bg-[#10131a]/60 backdrop-blur-xl flex justify-between items-center h-16 px-8 transition-all duration-300">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#adc6ff] to-[#ddb7ff] tracking-tighter uppercase">Ether Marketplace</span>
+<nav class="hidden lg:flex items-center gap-6 font-['Inter'] text-sm font-medium">
+<a class="text-[#adc6ff]" href="#">Marketplace</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Compute</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Nodes</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Docs</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-[#0b0e14] px-4 py-1.5 rounded-full border-none group">
+<span class="material-symbols-outlined text-slate-400 text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder-slate-500 w-48 transition-all focus:w-64" placeholder="Search AI models..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="pulse-button px-5 py-2 text-on-primary-fixed text-sm font-bold rounded-md hover:opacity-90 active:scale-[0.98] transition-all">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</header>
+<main class="relative pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 lg:px-24 overflow-hidden">
+<!-- Decorative Ambient Glows -->
+<div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-secondary/10 blur-[100px] rounded-full"></div>
+<div class="z-10 max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full mb-8">
+<span class="flex h-2 w-2 rounded-full bg-tertiary"></span>
+<span class="text-[10px] font-bold tracking-[0.1em] uppercase text-tertiary">Mainnet Live 2.0</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+                    Run AI Models <br/>
+<span class="text-gradient">Decentralized</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mb-12">
+                    Upload, monetize, and run AI models on a trustless network. Experience performance without the centralized gatekeepers.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="pulse-button px-8 py-4 rounded-md text-on-primary-fixed font-black text-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        Explore Models
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-8 py-4 rounded-md border border-outline-variant/30 text-on-surface font-bold text-lg hover:bg-surface-container-high transition-colors">
+                        Upload Model
+                    </button>
+</div>
+</div>
+<!-- Asymmetric Hero Visual -->
+<div class="hidden lg:block absolute right-[-5%] top-[15%] w-1/2">
+<div class="glass-panel p-8 rounded-xl relative overflow-hidden transform rotate-2 shadow-2xl scale-110">
+<img alt="Abstract digital lattice" class="rounded-lg opacity-80 mix-blend-screen grayscale" data-alt="abstract glowing digital neural network lattice floating in a dark pressurized void with cyan and magenta light pulses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDq8PehIggXsqP8SHneYCrQb6GJBsTTWczJdyszv8UntALiW_Pq5_c8ALSnA16rlBw4eXwvdOdTSzyqX5aH2PJ-GbyRhp_6X2OWkHIsp3WBaza7vnsHLy4QpIYQVn-dgkgpAsfe06aU_XNzITE__Ip0-zJRwrbbmYk8GJ3aoy_eS1FQLFLbo33uqueVKuhsgd4rG13KlHeIUtBk8oggsfLUdiDlSOQ6saLnxqhZxGxf517Ghq36zN_2NfHvNdIXDpoyhWvst1VSTK6"/>
+<div class="mt-6 flex flex-col gap-3">
+<div class="h-1 bg-gradient-to-r from-primary to-transparent w-full"></div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Active Inference</p>
+<p class="text-xl font-mono text-tertiary tracking-tighter">Llama-3-70B-Instruct</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Latency</p>
+<p class="text-xl font-mono text-on-surface">24ms</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features Section -->
+<section class="px-8 lg:px-24 py-24 bg-surface-container-lowest">
+<div class="mb-16">
+<h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Engineered for <span class="text-primary">Intelligence</span></h2>
+<p class="text-on-surface-variant max-w-xl">A specialized infrastructure layer designed for the next generation of decentralized AI development.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Feature 1: Pay-per-inference -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between overflow-hidden relative group hover:bg-surface-container-high transition-all duration-300">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="payments">payments</span>
+<h3 class="text-3xl font-bold mb-4 tracking-tight">Pay-per-inference</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">Forget expensive monthly subscriptions. Pay only for the tokens you generate, processed instantly via peer-to-peer microtransactions.</p>
+</div>
+<div class="absolute bottom-[-10%] right-[-5%] w-1/2 opacity-20 group-hover:opacity-40 transition-opacity">
+<img alt="Blockchain visualization" class="rounded-xl grayscale" data-alt="abstract close-up of digital blockchain blocks interlocking with neon blue outlines on a deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkdxObNmZ3-WsYW4MNaL8pEz9M8rZ_n_Mkw_CCMPrmT0OAwRkJroH2N2PeZ9-ZJEzqZxGfP-23aLR2eZ_sSdFO1-9NTQJ4B8x6W_xzmZj-7s9D81KUYS7nqZzk47UcbH5ScUjNTVFUL7_xYcjmF-iQuq6EP_zkcahnofOTfpiq6GY4io7KdXbZvAVNKuI8JoCkFprbAXU2Rt-8fTC8NmtlminF4HoBwRd2nkzLXjPDaSbJwO-EX9tLt_o7ox0uOG4iiMIhSmQC3Ytw"/>
+</div>
+</div>
+<!-- Feature 2: Transparent Pricing -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between hover:bg-surface-container-high transition-all duration-300">
+<div>
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="bar_chart">bar_chart</span>
+<h3 class="text-2xl font-bold mb-4 tracking-tight">Transparent Pricing</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Real-time market rates for compute. No hidden fees, no enterprise markups. Just pure supply and demand dynamics.</p>
+</div>
+<div class="mt-8">
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-xs text-slate-500 uppercase tracking-widest">H100 Node</span>
+<span class="text-tertiary font-mono">$1.42/hr</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-xs text-slate-500 uppercase tracking-widest">A100 Node</span>
+<span class="text-tertiary font-mono">$0.89/hr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 3: Decentralized Compute -->
+<div class="md:col-span-12 bg-surface-container-low rounded-xl p-10 flex flex-col md:flex-row gap-12 items-center hover:bg-surface-container-high transition-all duration-300">
+<div class="flex-1">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6" data-icon="memory">memory</span>
+<h3 class="text-3xl font-bold mb-4 tracking-tight">Decentralized Compute</h3>
+<p class="text-on-surface-variant max-w-xl leading-relaxed">Our global network of high-performance GPU nodes ensures your models are always available, censorship-resistant, and geographically distributed for low latency.</p>
+<div class="flex gap-4 mt-8">
+<div class="bg-surface-container-highest px-4 py-2 rounded flex items-center gap-3">
+<span class="text-xs font-mono text-primary">12.4K</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Active Nodes</span>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 rounded flex items-center gap-3">
+<span class="text-xs font-mono text-tertiary">99.99%</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Uptime</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full h-full min-h-[200px] bg-[#0b0e14] rounded-lg p-6 font-mono text-xs text-tertiary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-30"><span class="material-symbols-outlined">terminal</span></div>
+<p class="mb-2 text-slate-500">// INITIALIZING COMPUTE HANDSHAKE</p>
+<p class="mb-1">&gt; Requesting peer allocation... <span class="text-on-surface">OK</span></p>
+<p class="mb-1">&gt; Loading weights: stable-diffusion-xl <span class="text-on-surface">OK</span></p>
+<p class="mb-1">&gt; Verified by zk-SNARK proof: <span class="text-primary">0x4F...32A</span></p>
+<p class="mt-4 text-secondary">_ Running inference cycle 0042...</p>
+<div class="mt-4 h-1 w-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-2/3 shadow-[0_0_10px_rgba(60,221,199,0.5)]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Model Showcase (Glassmorphism Cards) -->
+<section class="px-8 lg:px-24 py-24 relative">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-3xl md:text-5xl font-black tracking-tighter">Marketplace <span class="text-secondary">Trending</span></h2>
+<p class="text-on-surface-variant mt-2">The most powerful open-source models, hosted by the community.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-2" href="#">View Full Catalog <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer group">
+<div class="aspect-video bg-surface-container-lowest rounded-lg mb-6 overflow-hidden">
+<img alt="AI generated art" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="complex 3D fractal structure with iridescent surfaces and sharp architectural angles in high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTf2EpoRrjmnRagb2B5t1X1KqTrezF2p8wbHaWMyRRkDx1WmIEksWfMsDFAp6sbnJLsBcCEgulmp_x4DYZvU_eOMUAwBK7GrK2cmMf4VabuTky_no3akDK8nLl9e7E7Zd1-zdrsttdRA2R8MVlrC4aE_S34rCMBTi4IaBC89Pq73yus7K1J6HWeMB5PbC6fXRREr_6NxHkONERrO4XqnS1NlZ4kXDp07k4_VH7SLwSP7_6PaPCmfTYkgqIK-hS6u_tyEWeFrK8rbXu"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-bold tracking-tight">Visionary-Flux-1</h4>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Image Gen</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Ultra-realistic image generation optimized for decentralized GPU clusters with low memory footprint.</p>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">bolt</span>
+<span class="text-xs font-mono">0.004 ETH/1k imgs</span>
+</div>
+<button class="text-primary text-xs font-black uppercase tracking-widest hover:text-white transition-colors">Test Now</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer group">
+<div class="aspect-video bg-surface-container-lowest rounded-lg mb-6 overflow-hidden">
+<img alt="Server room abstract" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="dark server room hallway with rows of glowing blue status lights on black tech cabinets in perspective" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDFF6zAYTEbxkyPafQpYbma7Z_FjlJBfIAqJYEX6AzywkcjbWdd3_h34A6oTSkjr1MDwPUtGZqjVUBzWOeH9WyDH10xnyDP7v7mMZFLIwECQejxi9voN_Pm13btuAVCFSJ8PxFdKcsTnLv1kgdORmxosdebCiTPbAHvjTXd0vNtHUegSILKzeFzK-h8GZ2Af1dD6nieA63oSkTUhz3a2Z1kcdOspDoNjECn_WKXLUDnVrEDm5i_ZFxypzcrdcrzWFc46Lpz8lvX2jG"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-bold tracking-tight">Coda-LLM-v2</h4>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Language</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Advanced coding assistant with context-aware logic processing. Benchmarked at 94% on HumanEval.</p>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">bolt</span>
+<span class="text-xs font-mono">0.0001 ETH/1k toks</span>
+</div>
+<button class="text-primary text-xs font-black uppercase tracking-widest hover:text-white transition-colors">Test Now</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-6 rounded-xl hover:scale-[1.02] transition-transform cursor-pointer group">
+<div class="aspect-video bg-surface-container-lowest rounded-lg mb-6 overflow-hidden">
+<img alt="Cybersecurity digital eye" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="stylized digital robotic eye with circuit patterns and glowing orange iris in a dark technological environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtl--6kZRzkZ6NX6pIO5MaKCmeIyKOpZbXANjtOBcJ0-pp-QnKakjHiuxjg3dphRhpla6jr24a3pRMLS2ahxgn35tqKrpj5VmTnkU_Lc6QUCqKzr5w5Y5oFuQx9mUGsTDkv0zQ6ybjRlZBhalAZ_dTi4kuzyFnzI5GPmEZxjwcdTl2lUrQwT-hYUidBkyqVJ_rB0a4xjgsUPU2-71mwiEq21Hd4Vythv95ApdRl0oUCgSi_HpC6ewgmTlVcBYdBvSkt0UK0fss6BDi"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xl font-bold tracking-tight">Sentinel-Audio-7</h4>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Audio</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Sub-millisecond audio transcription and translation for real-time communication systems.</p>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">bolt</span>
+<span class="text-xs font-mono">0.002 ETH/hr</span>
+</div>
+<button class="text-primary text-xs font-black uppercase tracking-widest hover:text-white transition-colors">Test Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8">
+<div class="max-w-6xl mx-auto glass-panel p-16 rounded-[2rem] text-center relative overflow-hidden">
+<div class="absolute top-[-50%] left-[-10%] w-[400px] h-[400px] bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-6">Ready to contribute to the <br/> <span class="text-gradient">Synthetic Ether?</span></h2>
+<p class="text-on-surface-variant text-xl max-w-2xl mx-auto mb-12">Join thousands of developers and node operators building the first trustless compute network for AI.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="pulse-button px-10 py-5 rounded-md text-on-primary-fixed font-black text-xl hover:scale-105 active:scale-95 transition-all">
+                            Launch App
+                        </button>
+<button class="px-10 py-5 rounded-md border border-outline text-on-surface font-bold text-xl hover:bg-surface-container-high transition-colors">
+                            Read the Whitepaper
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="px-8 lg:px-24 py-16 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between gap-12">
+<div class="max-w-xs">
+<span class="text-xl font-black text-on-surface tracking-tighter uppercase mb-6 block">Synthetic Ether</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">Defining the standard for decentralized intelligence through trustless compute protocols and incentive layers.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h5 class="text-xs font-black text-primary uppercase tracking-widest mb-6">Network</h5>
+<ul class="space-y-4 text-sm text-slate-400">
+<li><a class="hover:text-white transition-colors" href="#">Marketplace</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Explorer</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Governance</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Staking</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xs font-black text-primary uppercase tracking-widest mb-6">Developers</h5>
+<ul class="space-y-4 text-sm text-slate-400">
+<li><a class="hover:text-white transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-white transition-colors" href="#">API Keys</a></li>
+<li><a class="hover:text-white transition-colors" href="#">SDKs</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Node Setup</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xs font-black text-primary uppercase tracking-widest mb-6">Community</h5>
+<ul class="space-y-4 text-sm text-slate-400">
+<li><a class="hover:text-white transition-colors" href="#">Discord</a></li>
+<li><a class="hover:text-white transition-colors" href="#">X (Twitter)</a></li>
+<li><a class="hover:text-white transition-colors" href="#">GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest">
+<p>© 2024 Synthetic Ether Labs. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

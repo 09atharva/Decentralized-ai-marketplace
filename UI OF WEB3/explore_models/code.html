@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Models | Synthetic Ether</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131a",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#4d8eff",
+                        "tertiary-container": "#008678",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#adc6ff",
+                        "outline": "#908fa0",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131a",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container": "#1d2026",
+                        "surface": "#10131a",
+                        "on-primary": "#002e6a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3cddc7",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003731",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-variant": "#32353c",
+                        "surface-container-low": "#191c22",
+                        "error-container": "#93000a",
+                        "primary": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#62fae3",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-bright": "#363940",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#e1e2eb",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-container": "#000705",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(50, 53, 60, 0.4);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .neon-pulse {
+            background: linear-gradient(135deg, #adc6ff 0%, #ddb7ff 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-['Inter'] antialiased selection:bg-primary/30">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#10131a] border-none shadow-[20px_0_40px_rgba(0,0,0,0.3)] z-[60]">
+<div class="flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-4">
+<span class="text-lg font-bold tracking-tighter text-white uppercase">Synthetic Ether</span>
+<p class="text-[10px] text-slate-500 tracking-widest mt-1">High-Compute Intelligence</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#272a31] text-[#adc6ff] font-semibold border-r-2 border-[#adc6ff] rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">hub</span>
+<span class="text-sm">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">terminal</span>
+<span class="text-sm font-medium">Compute Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">memory</span>
+<span class="text-sm font-medium">Node Registry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all duration-200 ease-out rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary">description</span>
+<span class="text-sm font-medium">Documentation</span>
+</a>
+</nav>
+<div class="mt-auto space-y-2 pt-6 border-t border-white/5">
+<button class="w-full neon-pulse text-on-primary-fixed py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider scale-[0.98] active:duration-100 active:opacity-90 transition-all mb-4">
+                    Deploy Model
+                </button>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-[#272a31] transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Anchor -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-50 bg-[#10131a]/60 backdrop-blur-xl flex justify-between items-center px-8">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-lowest border-none text-sm rounded-full py-2 pl-10 pr-4 focus:ring-1 focus:ring-primary/50 text-on-surface placeholder:text-slate-500" placeholder="Search neural architectures..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#363940]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">
+                Connect Wallet
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<!-- Hero Header -->
+<div class="mb-12 max-w-4xl">
+<h1 class="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#adc6ff] to-[#ddb7ff] mb-4">
+                Neural Marketplace
+            </h1>
+<p class="text-slate-400 text-lg leading-relaxed font-light">
+                Securely deploy and exchange high-compute intelligence. From LLMs to Computer Vision, browse the ether for the most performant synthetic brains.
+            </p>
+</div>
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center gap-4 mb-10 p-2 bg-surface-container-low/50 rounded-2xl backdrop-blur-sm">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-xl text-xs font-bold text-primary tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                Category
+            </div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-xl text-xs font-semibold hover:bg-secondary-container/40 transition-colors">NLP</button>
+<button class="px-4 py-2 bg-surface-container-high text-slate-400 rounded-xl text-xs font-semibold hover:text-on-surface transition-colors">Vision</button>
+<button class="px-4 py-2 bg-surface-container-high text-slate-400 rounded-xl text-xs font-semibold hover:text-on-surface transition-colors">Audio</button>
+<button class="px-4 py-2 bg-surface-container-high text-slate-400 rounded-xl text-xs font-semibold hover:text-on-surface transition-colors">Code</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-xl text-xs font-bold text-slate-400 tracking-widest uppercase">
+                Price Range
+                <span class="material-symbols-outlined text-sm">unfold_more</span>
+</div>
+<div class="ml-auto px-4 text-xs text-slate-500 font-medium">
+                Showing 148 Models
+            </div>
+</div>
+<!-- Model Grid (Asymmetric/Bento-ish) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Featured Model Card (Large) -->
+<div class="md:col-span-2 glass-card rounded-2xl overflow-hidden group flex flex-col md:flex-row min-h-[320px]">
+<div class="w-full md:w-2/5 relative h-48 md:h-auto">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract 3D visualization of neural networks with glowing blue pulses and crystalline geometric structures in dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALWu7Wu-jzaUhLCgBlSg8M9YTDudIknowGuTT77MNOBmm3SzMZiL6QhoJJg7QuvH7DShtas9XHGIY__aGSSNbRQ1ZQOO8WL0V-nk5_STpTH-WOD8TLa97Ar-Z6jqNJzrzhLmKoexbKPhR9uzSGZPzYY-Bo_eTIGW6eescSGDhvTdAinS1IXL6MzykuIHbSGWZI2IkxWOCzE_-XVvA3ERwLxu8oT-zNnfv420xBnS4rPKzlzIVY1b3wiZUDGltZnfiybvTWLm8odilJ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-highest/80 md:to-transparent"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="label-sm text-[10px] uppercase tracking-widest text-tertiary font-bold mb-1 block">Featured Architecture</span>
+<h3 class="text-2xl font-bold text-white">Ether-70B Quantum</h3>
+</div>
+<div class="text-right">
+<span class="text-xs text-slate-500 block uppercase tracking-tighter">Price per call</span>
+<span class="text-lg font-mono text-primary font-bold">0.0042 ETH</span>
+</div>
+</div>
+<p class="text-slate-300 text-sm leading-relaxed mb-6 flex-1">
+                        Ultra-low latency model optimized for recursive reasoning and synthetic data generation. Built on the GQA framework with 128k context window.
+                    </p>
+<div class="flex items-center gap-3">
+<span class="px-2 py-1 rounded bg-secondary-container/30 text-[10px] font-bold text-on-secondary-container">NLP</span>
+<span class="px-2 py-1 rounded bg-secondary-container/30 text-[10px] font-bold text-on-secondary-container">REASONING</span>
+<div class="ml-auto flex items-center gap-2">
+<span class="text-[10px] text-slate-500 italic">Owner: neural_labs.eth</span>
+<button class="w-10 h-10 rounded-full neon-pulse flex items-center justify-center text-on-primary-fixed shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Standard Card 1 -->
+<div class="glass-card rounded-2xl p-6 group hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Close-up of holographic liquid metal ripples with purple and cyan reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvFjFYZ9-0-2sa7ihWEZp_5UDrk2wDZkJjU88mq3xBzJSEgWh1WVzzzUDOarIwrvMozNTUCjfjFguhWkkTah8ms_mtgCdyA3R6QaWmJtjorzczGpyyUZ6IlWV0LVknEoIHnhB3ZwHwkOPlzIvGSlTBNNKpGQvZ2oDScv37AgzPYjz8eBxM9oQiGaqVfMVt4qkLw3idcwOkiMbgPwQV_KfYHoXXdjQ8Rggo4_r2YwqRsyxpT1IFPNBFXJCi6CrLjLLuxSHv5zxl3qqN"/>
+</div>
+<div>
+<h4 class="font-bold text-white tracking-tight">Vision-X Pro</h4>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">By synth_architect</span>
+</div>
+<div class="ml-auto text-right">
+<span class="block text-[10px] text-slate-500">Price</span>
+<span class="text-xs font-mono text-tertiary">0.0008 ETH</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Computer Vision</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Object Detection</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-slate-800"></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-slate-600 flex items-center justify-center text-[8px] font-bold">+12</div>
+</div>
+<button class="px-4 py-1.5 rounded-lg border border-outline-variant text-[10px] font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all">
+                        Details
+                    </button>
+</div>
+</div>
+<!-- Standard Card 2 -->
+<div class="glass-card rounded-2xl p-6 group hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Dense grid of glowing data points connected by thin neon threads on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9LrpSKJG4uThxXc3xOLegFIPUixKZhlF6DmvVsEvblZ0scaa0tTG_ZFJ1BB7gHBPsybTSpPlc-xJEAhiE4uFUh_qSPlgD_c3GmgF3NpQxwOF8D0sPbuH7rAX8bRNtvG_Y-ZMgq8oka1uuFhObYFkEOgalJLzmGcQjMBfeBoaOcPNeTDa3FAkyeBvF_CWY1NjvNHITTXN-xMx52Le7gDXaIXuQqHZvJTBihVZGhfpoGEO00z1bV8LlNbZK8wiwVnaJ5uv6d1zXyZD9"/>
+</div>
+<div>
+<h4 class="font-bold text-white tracking-tight">AudioGen v2</h4>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">By echo_systems</span>
+</div>
+<div class="ml-auto text-right">
+<span class="block text-[10px] text-slate-500">Price</span>
+<span class="text-xs font-mono text-tertiary">0.0015 ETH</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Audio</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Synthesis</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-[10px] font-medium">Verified Source</span>
+</div>
+<button class="px-4 py-1.5 rounded-lg border border-outline-variant text-[10px] font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all">
+                        Details
+                    </button>
+</div>
+</div>
+<!-- Standard Card 3 -->
+<div class="glass-card rounded-2xl p-6 group hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Stylized glowing cube made of digital binary code floating in dark space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs4MMFzH9gtBnq4BQ_ehaBmRpMgkHHJwPCcHn19WBNJao6UFUkRt-bX852nqIYZVH5OPIEd-gz2rnTe5qi11g50tV1fZX2hL63xT3FT4K615OboCXB5J10aLwm6CJFIt8nO547erTMNEhgeqHoD1RYtnuac8iRJNhc8LWPuMeiLragwQk1fznD48PstjGL6i3DL38oPDZmNsZCf0MkZLlJXWn9-SHCtDq3S0KxMkJ42PbfLObAynfBur_03a65K3BErIyuY6SUOwZi"/>
+</div>
+<div>
+<h4 class="font-bold text-white tracking-tight">LogicGrid 7B</h4>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">By logic_foundry</span>
+</div>
+<div class="ml-auto text-right">
+<span class="block text-[10px] text-slate-500">Price</span>
+<span class="text-xs font-mono text-tertiary">0.0005 ETH</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Code</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Fine-tuned</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-[10px] font-medium">Updated 2h ago</span>
+</div>
+<button class="px-4 py-1.5 rounded-lg border border-outline-variant text-[10px] font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all">
+                        Details
+                    </button>
+</div>
+</div>
+<!-- Standard Card 4 -->
+<div class="glass-card rounded-2xl p-6 group hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Global communication network represented by glowing paths over a dark earth silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXkkMToNy9-hdCz59YRHhep7cb9olIreiue9_5guyTm2vMZiq569OnyobTz1tlLCj5qSWXLsPKG-kiT3UBwC6xY2pAaK5P1eVhBQiQrPw77Hd4mC0BWShMJnJQP0_mLLryrd7XEqMl8i-zyxiGSw4ocEbRYVKWowg7qPcOSU6FVzaOCbI7h0Q4YMJVwfWEiQjOF_4P5YMrQA77PUY1l_KX1JudCWrit-FwGT66DSgSWAKPrJQPlV9uwljH8sMkrYdRqMIbmrQuzZwS"/>
+</div>
+<div>
+<h4 class="font-bold text-white tracking-tight">GeoParse Engine</h4>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">By terra_map</span>
+</div>
+<div class="ml-auto text-right">
+<span class="block text-[10px] text-slate-500">Price</span>
+<span class="text-xs font-mono text-tertiary">0.0012 ETH</span>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Geo-spatial</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/20 text-[9px] font-bold text-on-secondary-container uppercase">Vision</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-[10px] font-bold">Trending</span>
+</div>
+<button class="px-4 py-1.5 rounded-lg border border-outline-variant text-[10px] font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all">
+                        Details
+                    </button>
+</div>
+</div>
+<!-- Small Utility Card -->
+<div class="glass-card rounded-2xl p-6 flex flex-col justify-center items-center text-center border-dashed border-2 border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+</div>
+<h4 class="font-bold text-white mb-2">Deploy Your Own</h4>
+<p class="text-xs text-slate-500">Submit your trained weight architecture to the ether registry.</p>
+</div>
+</div>
+<!-- Pagination/Footer Context -->
+<div class="mt-16 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-primary text-on-primary-fixed font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-400 hover:text-white transition-colors text-sm font-bold">2</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-400 hover:text-white transition-colors text-sm font-bold">3</button>
+<span class="text-slate-600 px-2">...</span>
+<button class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-400 hover:text-white transition-colors text-sm font-bold">12</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Visual Accents -->
+<div class="fixed bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed top-0 left-64 w-64 h-64 bg-secondary/5 blur-[100px] pointer-events-none -z-10"></div>
+</body></html>
