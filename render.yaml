@@ -1,0 +1,66 @@
+services:
+  # 1. PostgreSQL Database
+  - type: database
+    name: omni-db
+    databaseName: omni_marketplace
+    user: neel
+
+  # 2. Redis for Job Queuing
+  - type: redis
+    name: omni-redis
+    plan: free
+
+  # 3. EVM API Gateway
+  - type: web
+    name: evm-gateway
+    env: node
+    rootDir: decentralized-ai-marketplace/gateway
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: omni-db
+          property: connectionString
+      - key: REDIS_URL
+        fromRedis:
+          name: omni-redis
+          property: connectionString
+
+  # 4. Solana API Gateway
+  - type: web
+    name: solana-gateway
+    env: node
+    rootDir: solana-ai-marketplace/gateway
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: omni-db
+          property: connectionString
+      - key: REDIS_URL
+        fromRedis:
+          name: omni-redis
+          property: connectionString
+
+  # 5. Job Scheduler
+  - type: worker
+    name: job-scheduler
+    env: node
+    rootDir: decentralized-ai-marketplace/scheduler
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: omni-db
+          property: connectionString
+      - key: REDIS_URL
+        fromRedis:
+          name: omni-redis
+          property: connectionString
+
+  # 6. AI Compute Worker
+  - type: worker
+    name: ai-compute-worker
+    env: python
+    rootDir: decentralized-ai-marketplace/worker
+    plan: free
